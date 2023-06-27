@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include "main.h"
 
 /**
 */
@@ -23,27 +24,27 @@ int printf(const char *format, ...)
 			{
 				case 'c':
 					chrt = (char)va_arg(argmts, int);
-					putchar(chrt);
+					_putchar(chrt);
 					chnum++;
 					break;
 				case 's':
 					str = va_arg(argmts, char *);
 					while (*str)
 					{
-						putchar(*str);
+						_putchar(*str);
 					}
 					str++;
 					chnum++;
 					break;
 				case '%':
-					putchar('%');
+					_putchar('%');
 					chnum++;
 					break;
 			}
 		}
 		else
 			{
-				putchar(*format);
+				_putchar(*format);
 				chnum++;
 			}
 			format++;
